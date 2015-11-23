@@ -3,16 +3,22 @@ MainGame = class()
 
 local mainGame
 
-function MainGame:init(x)
-    -- you can accept and set parameters here
-    self.x = x
+function MainGame:init()
+    --sprite("Dropbox:Red Back Circle Button")
+   -- sprite("Dropbox:Blue Back Circle Button")
+    moveRedBackButton = Button("Dropbox:Blue Back Circle Button", vec2(51, 700))
 end
 
 function MainGame:draw()
-    background(255, 255, 255, 255)
-    -- Codea does not automatically call this method
+   background(194, 187, 42, 255)
+    moveRedBackButton:draw()
 end
 
 function MainGame:touched(touch)
-    -- Codea does not automatically call this method
+    moveRedBackButton:touched(touch)
+
+ if (moveRedBackButton.selected == true) then
+    Scene.Change("play")
 end
+    
+    end
